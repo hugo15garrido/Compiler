@@ -1,4 +1,4 @@
-package laboratorios.lab04;
+package compiler.ast;
  
 import java.util.List;
 import java.util.LinkedList;
@@ -19,13 +19,9 @@ public class Root extends Node{
 	}
 	
 	public void print(String padding){
-	try{
 		for(Node n : list){
 			System.out.println("exp ->");
 			n.print(padding + "\t");
-		}
-	}catch (exception e){
-		System.out.println (e);
 	}
 	}
 	

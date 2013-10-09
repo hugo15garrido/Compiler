@@ -5,6 +5,7 @@ import java.util.Stack;
 import java.lang.*;
 import compiler.lib.*;
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
 public class CC4Parser{
 Scanner file;
 public static Decaf lex;
@@ -14,15 +15,26 @@ public Stack<String> stack2 ;
 		file=name;
 	}      
 
-	public void Parse (PrintStream out, boolean deb){ /* imprimiendo en pantalla "stage: scanning". */   
+	public void Parse (PrintStream out, boolean deb, boolean print){ /* imprimiendo en pantalla "stage: scanning". */
+			if(print == true){
 			out.println("Stage: parsing");
 			printParser(out, deb);
+			}
 			if(deb==true){
 				Debug debug = new Debug();
 				debug.DebugPrint("parsing");
 			}
 	 }
 	 
+	 public ParseTree ExecParse () throws IOException{
+			String fileName = this.file.getFileName();
+			CharStream input = new ANTLRFileStream(fileName);
+			Decaf lex = new Decaf (input);
+			CommonTokenStream tokens = new CommonTokenStream(lex);
+			DecafParse parser = new DecafParse(tokens);
+			ParseTree tree = parser.program();
+			return tree;
+	 }
 	 public void printParser (PrintStream out, boolean deb){ /* imprimiendo stage: parsing*/   
 	try {
 	String fileName = this.file.getFileName();

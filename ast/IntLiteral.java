@@ -1,4 +1,4 @@
-package laboratorios.lab04;
+package compiler.ast;
  
 public class IntLiteral extends Node{
 	private int value;

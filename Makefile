@@ -30,6 +30,11 @@ semantic\Semantic.class: semantic\Semantic.java
 
 ast\Ast.class: ast\Ast.java
 	javac ast\Ast.java
+	javac ast\Node.java
+	javac ast\Root.java
+	javac ast\IntLiteral.java
+	javac ast\BinOp.java
+	javac ast\AstVisitor.java
 	
 parser\CC4Parser.class: parser\CC4Parser.java
 	javac parser\CC4Parser.java

@@ -1,4 +1,4 @@
-package laboratorios.lab04;
+package compiler.ast;
  
 public abstract class Node{
 	public abstract void print(String padding);
