@@ -1,19 +1,21 @@
 package compiler.ast;
- 
+import java.util.List;
+import compiler.parser.*;
+
 public class FieldDecl extends Node{
-	private String operator;
-	private Node left;
-	private Node right;
+	private Node type;
+	private Node id;
+	private List<Node> Parametros;
 	
-	public BinOp(String op, Node l, Node r){
-		operator = op;
-		left = l;
-		right = r;
+	public FieldDecl(Node op, Node l, List<Node> r){
+		type = op;
+		id = l;
+		Parametros = r;
 	}
 	
 	public void print(String padding){
-		System.out.println(padding + operator);
-		left.print(padding + "\t");
-		right.print(padding + "\t");
+		System.out.println(padding + "METODO");
+		type.print(padding + "\t");
+		id.print(padding + "\t");
 	}
 } 

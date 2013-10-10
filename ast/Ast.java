@@ -12,7 +12,7 @@ CC4Parser file;
 		file= name;
 	}      
 	public void AsPrint (PrintStream out, boolean deb) throws IOException{ 
-			out.println("Stagesss: asst");
+			out.println("Stagesssssss: asst");
 			start();
 			if(deb==true){
 				Debug debug = new Debug();
