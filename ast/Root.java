@@ -20,7 +20,7 @@ public class Root extends Node{
 	
 	public void print(String padding){
 		for(Node n : list){
-			System.out.println("Program->");
+			System.out.println("");
 			n.print(padding + "\t");
 	}
 	}

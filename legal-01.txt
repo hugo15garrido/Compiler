@@ -1,13 +1,5 @@
 class Program {
 int a;
 int b;
-  void bar(int a) {
-    for i = 0, a {
-      a = a - 1;
-    }
-  }
-
-  void main() {
-    bar(10);
-  }
+int a[5];
 }
