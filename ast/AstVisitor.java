@@ -7,52 +7,32 @@ import org.antlr.v4.runtime.Token;
 
  
 public class AstVisitor extends DecafParseBaseVisitor <Node>{
-Root root = new Root();
-	@Override public Node visitRoot(DecafParse.RootContext ctx) { 
-	
+
+	@Override public Node visitRoot(DecafParse.RootContext ctx) {
+		Root root = new Root();
+		Root rootfieldDecl = new Root();
+		Root rootmethodDecl = new Root();
 		List<DecafParse.Field_declContext> fieldDecl = ctx.field_decl();
 		List<DecafParse.Method_declContext> methodDecl = ctx.method_decl();
 		
 		for(DecafParse.Field_declContext e : fieldDecl){
-			root.add(visit(e));
-			System.out.println (e);
+			rootfieldDecl.add(visit(e));
 		}
 		
 		for(DecafParse.Method_declContext e : methodDecl){
-			root.add(visit(e));
-			System.out.println (e);
+			rootmethodDecl.add(visit(e));
 		}
-		return root;
-	}
-	@Override public Node visitMethodDecl(DecafParse.MethodDeclContext ctx) 
-	{ Node op =  (visit(ctx.type())); 
-		root.add(op);
-		List<DecafParse.IdContext> id2 = ctx.id();
-		
-		for(DecafParse.IdContext e : id2){
-			root.add(visit(e));
-			System.out.println (e);
-		}
+		root.add(new VisitorRoot(ctx.PROGRAM(), rootfieldDecl, rootmethodDecl));
 		return root;
 	}
 	
 	@Override public Node visitFielddecl(DecafParse.FielddeclContext ctx) { 
-		Node op =  (visit(ctx.type()));
-		root.add(op);
-		List<DecafParse.Field2Context> fieldDecl2 = ctx.field2();
-		
-		for(DecafParse.Field2Context e : fieldDecl2){
-			root.add(visit(e));
-			System.out.println (e);
-		}
-		return root;
-	}
-	
-	@Override public Node visitLiteralInt(DecafParse.LiteralIntContext ctx) { 
-		return new IntLiteral(ctx.int_literal().getText()); 
-	}
-	@Override public Node visitLiteralChar(DecafParse.LiteralCharContext ctx) { 
-		return new IntLiteral(ctx.SINGLECHAR().getText()); 
+		Root variables = new Root();
+		int Variables = ctx.field2().size();
+		for (int i = 0; i<Variables; i++){
+			variables.add(new Variable(ctx.type().getText(), ctx.field2(i).getText()));
+		}	
+		return variables;
 	}
 
 }

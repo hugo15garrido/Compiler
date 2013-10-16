@@ -20,10 +20,16 @@ public class Root extends Node{
 	
 	public void print(String padding){
 		for(Node n : list){
-			System.out.println("exp ->");
+			System.out.println("Program->");
 			n.print(padding + "\t");
 	}
 	}
+	public void printAlt(String padding){
+		for(Node n : list){
+			n.print(padding);
+		}
+	}
+	
 	
 	public void print(){
 		print("");
