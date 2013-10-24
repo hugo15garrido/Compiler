@@ -42,11 +42,13 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 
 	T visitFielddecl1(DecafParse.Fielddecl1Context ctx);
 
+	T visitMethodParameter(DecafParse.MethodParameterContext ctx);
+
 	T visitFielddecl2(DecafParse.Fielddecl2Context ctx);
 
-	T visitVardeclaration(DecafParse.VardeclarationContext ctx);
-
 	T visitLiteralChar(DecafParse.LiteralCharContext ctx);
+
+	T visitVardeclaration(DecafParse.VardeclarationContext ctx);
 
 	T visitLiteralExpr2(DecafParse.LiteralExpr2Context ctx);
 

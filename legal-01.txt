@@ -2,4 +2,7 @@ class Program {
 int a;
 int b;
 int a[5];
+void bar(boolean a, int b, boolean c) {
+
+  }
 }

@@ -43,11 +43,13 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 
 	@Override public T visitFielddecl1(DecafParse.Fielddecl1Context ctx) { return visitChildren(ctx); }
 
+	@Override public T visitMethodParameter(DecafParse.MethodParameterContext ctx) { return visitChildren(ctx); }
+
 	@Override public T visitFielddecl2(DecafParse.Fielddecl2Context ctx) { return visitChildren(ctx); }
 
-	@Override public T visitVardeclaration(DecafParse.VardeclarationContext ctx) { return visitChildren(ctx); }
-
 	@Override public T visitLiteralChar(DecafParse.LiteralCharContext ctx) { return visitChildren(ctx); }
+
+	@Override public T visitVardeclaration(DecafParse.VardeclarationContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitLiteralExpr2(DecafParse.LiteralExpr2Context ctx) { return visitChildren(ctx); }
 

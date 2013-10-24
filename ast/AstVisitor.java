@@ -30,9 +30,34 @@ public class AstVisitor extends DecafParseBaseVisitor <Node>{
 		Root variables = new Root();
 		int Variables = ctx.field2().size();
 		for (int i = 0; i<Variables; i++){
-			variables.add(new Variable(ctx.type().getText(), ctx.field2(i).getText()));
+			variables.add(new Variable(ctx.type().getText(), ctx.field2(i).getText(), "var"));
 		}	
 		return variables;
+	}
+	
+	@Override public Node visitMethodDecl(DecafParse.MethodDeclContext ctx) {
+
+		//System.out.println (ctx.method_param().getText());
+		
+		Node parametros = ctx.method_param() == null? (new Root()) : visit(ctx.method_param());
+		Node bloque = ctx.block() == null? (new Root()) : visit(ctx.block());
+		Node tipo =  visit(ctx.metodo2());
+		
+		return new Metodo(tipo, ctx.id().getText(), parametros, bloque, ctx.metodo2().getText());
+		
+	}
+	
+	@Override public Node visitMethodParameter(DecafParse.MethodParameterContext ctx) {
+		int i1 = ctx.type().size();
+		Root parametros = new Root();
+		for (int i=0;i<i1; i++){
+			parametros.add(new Variable(ctx.type(i).getText(), ctx.id(i).getText(), "param"));
+		}
+		return parametros;
+	}
+	
+	@Override public Node visitMethodDeclType(DecafParse.MethodDeclTypeContext ctx) { 
+		return new SimpleNode(ctx.type().getText()); 
 	}
 
 }

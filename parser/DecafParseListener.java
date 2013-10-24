@@ -59,14 +59,17 @@ public interface DecafParseListener extends ParseTreeListener {
 	void enterFielddecl1(DecafParse.Fielddecl1Context ctx);
 	void exitFielddecl1(DecafParse.Fielddecl1Context ctx);
 
+	void enterMethodParameter(DecafParse.MethodParameterContext ctx);
+	void exitMethodParameter(DecafParse.MethodParameterContext ctx);
+
 	void enterFielddecl2(DecafParse.Fielddecl2Context ctx);
 	void exitFielddecl2(DecafParse.Fielddecl2Context ctx);
 
-	void enterVardeclaration(DecafParse.VardeclarationContext ctx);
-	void exitVardeclaration(DecafParse.VardeclarationContext ctx);
-
 	void enterLiteralChar(DecafParse.LiteralCharContext ctx);
 	void exitLiteralChar(DecafParse.LiteralCharContext ctx);
+
+	void enterVardeclaration(DecafParse.VardeclarationContext ctx);
+	void exitVardeclaration(DecafParse.VardeclarationContext ctx);
 
 	void enterLiteralExpr2(DecafParse.LiteralExpr2Context ctx);
 	void exitLiteralExpr2(DecafParse.LiteralExpr2Context ctx);

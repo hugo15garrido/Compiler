@@ -39,9 +39,13 @@ field_decl	: type (field2)(COLON field2)* SEMICOLON
 field2:	id  { stack1.push("field2: id");}{ stack2.push("field2: id");} #fielddecl1
 		|id  OPENTHING int_literal CLOSEDTHING { stack1.push("field2: id OPENTHING int_literal CLOSEDTHING");}{ stack2.push("field2: id OPENTHING int_literal CLOSEDTHING");} #fielddecl2;
 
-method_decl	:metodo2 id ((OPENPAREN ( type id)((COLON) (type id))* CLOSEDPAREN) | (OPENPAREN CLOSEDPAREN)) block 
-{ stack1.push("method_decl	:metodo2 id ((OPENPAREN ( type id)((COLON) (type id))* CLOSEDPAREN)| (OPENPAREN CLOSEDPAREN)) block");}
-{ stack2.push("method_decl	:metodo2 id ((OPENPAREN ( type id)((COLON) (type id))* CLOSEDPAREN)| (OPENPAREN CLOSEDPAREN)) block");}#methodDecl;
+method_decl	:metodo2 id OPENPAREN method_param? CLOSEDPAREN block 
+{ stack1.push("metodo2 id OPENPAREN method_param? CLOSEDPAREN block");}
+{ stack2.push("metodo2 id OPENPAREN method_param? CLOSEDPAREN block");}#methodDecl;
+
+method_param : type id (COLON type id)* 
+{ stack1.push("type id (COLON type id)* ");}
+{ stack2.push("type id (COLON type id)* ");} #methodParameter;
 
 metodo2: type 
 { stack1.push("metodo2: type;");}
