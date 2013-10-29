@@ -80,9 +80,6 @@ public class DecafParseBaseListener implements DecafParseListener {
 	@Override public void enterLiteralInt(DecafParse.LiteralIntContext ctx) { }
 	@Override public void exitLiteralInt(DecafParse.LiteralIntContext ctx) { }
 
-	@Override public void enterLocationId(DecafParse.LocationIdContext ctx) { }
-	@Override public void exitLocationId(DecafParse.LocationIdContext ctx) { }
-
 	@Override public void enterForAssignation(DecafParse.ForAssignationContext ctx) { }
 	@Override public void exitForAssignation(DecafParse.ForAssignationContext ctx) { }
 

@@ -119,7 +119,7 @@ literal		: int_literal { stack1.push("literal		: int_literal");}{ stack2.push("l
 
 string_literal	: STRING { stack1.push("string_literal	: STRING");}{ stack2.push("string_literal	: STRING");} #LiteralString;
 
-location	: (id (OPENTHING expr CLOSEDTHING)?  id (OPENTHING expr CLOSEDTHING)?) { stack1.push("location	: (id (OPENTHING expr CLOSEDTHING)?  id (OPENTHING expr CLOSEDTHING)?)");}{ stack2.push("location	: (id (OPENTHING expr CLOSEDTHING)?  id (OPENTHING expr CLOSEDTHING)?)");} #Location1| id { stack1.push("location	: id");}{ stack2.push("location	: id");}#LocationId;
+location	: (id (OPENTHING expr CLOSEDTHING)?) { stack1.push("location	: id (OPENTHING expr CLOSEDTHING)?)");}{ stack2.push("location	: (id (OPENTHING expr CLOSEDTHING)?)");} #Location1;
 
 id		: IDENTIFIER { stack1.push("id		: IDENTIFIER");}{ stack2.push("id		: IDENTIFIER");} #Identifier;
 

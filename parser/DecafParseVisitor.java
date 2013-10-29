@@ -54,8 +54,6 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 
 	T visitLiteralInt(DecafParse.LiteralIntContext ctx);
 
-	T visitLocationId(DecafParse.LocationIdContext ctx);
-
 	T visitForAssignation(DecafParse.ForAssignationContext ctx);
 
 	T visitBooleannType(DecafParse.BooleannTypeContext ctx);

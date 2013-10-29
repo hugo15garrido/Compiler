@@ -55,8 +55,6 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 
 	@Override public T visitLiteralInt(DecafParse.LiteralIntContext ctx) { return visitChildren(ctx); }
 
-	@Override public T visitLocationId(DecafParse.LocationIdContext ctx) { return visitChildren(ctx); }
-
 	@Override public T visitForAssignation(DecafParse.ForAssignationContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitBooleannType(DecafParse.BooleannTypeContext ctx) { return visitChildren(ctx); }

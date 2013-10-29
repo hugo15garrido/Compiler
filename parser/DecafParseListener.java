@@ -77,9 +77,6 @@ public interface DecafParseListener extends ParseTreeListener {
 	void enterLiteralInt(DecafParse.LiteralIntContext ctx);
 	void exitLiteralInt(DecafParse.LiteralIntContext ctx);
 
-	void enterLocationId(DecafParse.LocationIdContext ctx);
-	void exitLocationId(DecafParse.LocationIdContext ctx);
-
 	void enterForAssignation(DecafParse.ForAssignationContext ctx);
 	void exitForAssignation(DecafParse.ForAssignationContext ctx);
 
