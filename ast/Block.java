@@ -14,14 +14,14 @@ public class Block extends Node{
 	// metodos
 	public void print(String padding){
 		System.out.println(padding + "block");
-		var_decl.printAlt(padding + "\t");
-		statement.printAlt(padding + "\t");
+		var_decl.print(padding + "\t");
+		statement.print(padding + "\t");
 	}
 	
 	public void printAlt(String padding){
 		System.out.println(padding + "block");
-		var_decl.printAlt(padding + "\t");
-		statement.printAlt(padding + "\t");
+		var_decl.print(padding + "\t");
+		statement.print(padding + "\t");
 	}
 	
 	public Node retVar_decl(){

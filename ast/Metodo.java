@@ -24,7 +24,7 @@ public class Metodo extends Node{
 		System.out.println(padding + "\t" + id);
 		parametros.print(padding + "\t");
 		//type.print (padding + "\t");
-		//blq.print(padding + "\t");
+		blq.print(padding + "\t");
 	}
 	
 	public void printAlt(String padding){
@@ -32,7 +32,8 @@ public class Metodo extends Node{
 		System.out.println(padding + "\t" + tipo);
 		System.out.println(padding + "\t" + id);
 		parametros.print(padding + "\t");
-		//blq.print(padding + "\t");
+		//type.print (padding + "\t");
+		blq.print(padding + "\t");
 	}
 	
 	public Node retTipo(){

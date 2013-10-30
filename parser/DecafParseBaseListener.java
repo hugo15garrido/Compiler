@@ -53,11 +53,11 @@ public class DecafParseBaseListener implements DecafParseListener {
 	@Override public void enterAssignOp1(DecafParse.AssignOp1Context ctx) { }
 	@Override public void exitAssignOp1(DecafParse.AssignOp1Context ctx) { }
 
-	@Override public void enterAssignOp2(DecafParse.AssignOp2Context ctx) { }
-	@Override public void exitAssignOp2(DecafParse.AssignOp2Context ctx) { }
-
 	@Override public void enterOpMinus(DecafParse.OpMinusContext ctx) { }
 	@Override public void exitOpMinus(DecafParse.OpMinusContext ctx) { }
+
+	@Override public void enterAssignOp2(DecafParse.AssignOp2Context ctx) { }
+	@Override public void exitAssignOp2(DecafParse.AssignOp2Context ctx) { }
 
 	@Override public void enterFielddecl1(DecafParse.Fielddecl1Context ctx) { }
 	@Override public void exitFielddecl1(DecafParse.Fielddecl1Context ctx) { }
@@ -88,6 +88,9 @@ public class DecafParseBaseListener implements DecafParseListener {
 
 	@Override public void enterBooleannType(DecafParse.BooleannTypeContext ctx) { }
 	@Override public void exitBooleannType(DecafParse.BooleannTypeContext ctx) { }
+
+	@Override public void enterStatement111(DecafParse.Statement111Context ctx) { }
+	@Override public void exitStatement111(DecafParse.Statement111Context ctx) { }
 
 	@Override public void enterOpEqual(DecafParse.OpEqualContext ctx) { }
 	@Override public void exitOpEqual(DecafParse.OpEqualContext ctx) { }
@@ -124,6 +127,9 @@ public class DecafParseBaseListener implements DecafParseListener {
 
 	@Override public void enterCalloutArg2(DecafParse.CalloutArg2Context ctx) { }
 	@Override public void exitCalloutArg2(DecafParse.CalloutArg2Context ctx) { }
+
+	@Override public void enterExpresionMetodo(DecafParse.ExpresionMetodoContext ctx) { }
+	@Override public void exitExpresionMetodo(DecafParse.ExpresionMetodoContext ctx) { }
 
 	@Override public void enterMethodCall(DecafParse.MethodCallContext ctx) { }
 	@Override public void exitMethodCall(DecafParse.MethodCallContext ctx) { }

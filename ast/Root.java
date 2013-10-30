@@ -14,8 +14,8 @@ public class Root extends Node{
 		list.add(node);
 	}
 	
-	public void getList(){
-		System.out.println (this.list);
+	public List<Node> getList(){
+		return this.list;
 	}
 	
 	public void print(String padding){

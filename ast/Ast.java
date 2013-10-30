@@ -11,9 +11,8 @@ CC4Parser file;
 	public Ast (CC4Parser name){  
 		file= name;
 	}      
-	public void AsPrint (PrintStream out, boolean deb) throws IOException{ 
-			out.println("Stagesssssss: asst");
-			start();
+	public void AsPrint (PrintStream out, boolean deb, boolean print) throws IOException{ 
+			start(out, deb, print);
 			if(deb==true){
 				Debug debug = new Debug();
 				debug.DebugPrint("ast");
@@ -23,10 +22,30 @@ CC4Parser file;
 		String s= " stage: ast";
 		return s;
 	}
-	public void start() throws IOException{
+	public void start(PrintStream out, boolean deb, boolean print) throws IOException{
+		if (print == true){
+		out.println("Stage: ast");
+		ParseTree tree = file.ExecParse();
+		AstVisitor visitor = new AstVisitor();
+		Root root = (Root)visitor.visit(tree);
+		out.println(root.getList());
+		}else{
+		ParseTree tree = file.ExecParse();
+		AstVisitor visitor = new AstVisitor();
+		Root root = (Root)visitor.visit(tree);
+		}
+		if (deb == true){
 		ParseTree tree = file.ExecParse();
 		AstVisitor visitor = new AstVisitor();
 		Root root = (Root)visitor.visit(tree);
 		root.print("");
+		}
+	}
+	
+	public Root getTreeRoot() throws IOException{
+		ParseTree tree = file.ExecParse();
+		AstVisitor visitor = new AstVisitor();
+		Root root = (Root)visitor.visit(tree);
+		return root;
 	}
 }

@@ -74,17 +74,21 @@ type		: INT
 
 statement	: location assign_op expr SEMICOLON  { stack1.push("statement	: location assign_op expr SEMICOLON");} { stack2.push("statement	: location assign_op expr SEMICOLON");} #statement1
 		| method_call SEMICOLON  { stack1.push("statement	: method_call SEMICOLON ");} { stack2.push("statement	: method_call SEMICOLON ");} #statement2 | method_call{ stack1.push("statement	: method_call");} { stack2.push("statement	: method_call");} #callMethod
-		| IF OPENPAREN expr CLOSEDPAREN block (ELSE (block)) { stack1.push("statement	: IF OPENPAREN expr CLOSEDPAREN block (ELSE (block))");}{ stack2.push("statement	: IF OPENPAREN expr CLOSEDPAREN block (ELSE (block))");} #BlockExpr
+		| IF OPENPAREN expr CLOSEDPAREN block elseop* { stack1.push("statement	: IF OPENPAREN expr CLOSEDPAREN block (ELSE (block))");}{ stack2.push("statement	: IF OPENPAREN expr CLOSEDPAREN block (ELSE (block))");} #BlockExpr
 		| FOR id ASSIGNATION expr COLON expr block { stack1.push("statement	: FOR id ASSIGNATION expr COLON expr block");}{ stack2.push("statement	: FOR id ASSIGNATION expr COLON expr block");} #ForAssignation
 		| RETURN expr SEMICOLON  { stack1.push("statement	: RETURN expr SEMICOLON");}{ stack2.push("statement	: RETURN expr SEMICOLON");} #AsignationColon
 		| BREAK SEMICOLON { stack1.push("statement	: BREAK SEMICOLON");}{ stack2.push("statement	: BREAK SEMICOLON");} #BreakSemi
 		| CONTINUE SEMICOLON  { stack1.push("statement	: CONTINUE SEMICOLON");}{ stack2.push("statement	: CONTINUE SEMICOLON");} #ContinueSemi
 		| block { stack1.push("statement	: block");}{ stack2.push("statement	: block");} #BlockStatement;
+
+elseop : ELSE block { stack1.push("elseop : ELSE block");}{ stack2.push("elseop : ELSE block");} #statement111;
 		
 assign_op	: ASSIGNATION { stack1.push("assign_op	: ASSIGNATION");}{ stack2.push("assign_op	: ASSIGNATION");} #AssignOp1 | PLUSEQUAL { stack1.push("assign_op	: PLUSEQUAL");}{ stack2.push("assign_op	: PLUSEQUAL");} #AssignOp2;
 
-method_call	: method_name ((OPENPAREN  expr (COLON expr)* CLOSEDPAREN) |(OPENPAREN CLOSEDPAREN)) { stack1.push("method_call	: method_name OPENPAREN  expr (COLON expr)* CLOSEDPAREN");}{ stack2.push("method_call	: method_name OPENPAREN  expr (COLON expr)* CLOSEDPAREN");}  #MethodCall1
+method_call	: method_name ((OPENPAREN expresion_met  CLOSEDPAREN) |(OPENPAREN CLOSEDPAREN)) { stack1.push("method_call	: method_name ((OPENPAREN expresion_met  CLOSEDPAREN) |(OPENPAREN CLOSEDPAREN))");}{ stack2.push("method_call	: method_name ((OPENPAREN expresion_met  CLOSEDPAREN) |(OPENPAREN CLOSEDPAREN))");}  #MethodCall1
 				| CALLOUT OPENPAREN string_literal ((COLON callout_arg )*) CLOSEDPAREN { stack1.push("method_call	: CALLOUT OPENPAREN string_literal ((COLON callout_arg )*) CLOSEDPAREN");}{ stack2.push("method_call	: CALLOUT OPENPAREN string_literal ((COLON callout_arg )*) CLOSEDPAREN");} #MethodCall2;	
+
+expresion_met :	expr (COLON expr)* #ExpresionMetodo;
 
 method_name	: id { stack1.push("method_name	: id");}{ stack2.push("method_name	: id");} #MethodName;
 

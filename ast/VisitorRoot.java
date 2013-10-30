@@ -4,7 +4,6 @@ import compiler.parser.*;
 import org.antlr.v4.runtime.tree.*;
 import org.antlr.v4.runtime.Token;
 public class VisitorRoot extends Node{
-
 	private TerminalNode program;
 	private Node field;
 	private Node method;
@@ -16,14 +15,22 @@ public class VisitorRoot extends Node{
 	}
 	
 	public void print(String padding){
+		//StrOperator = StrOperator + program.getText();
 		System.out.println(program.getText());
 		field.print("\t");
 		method.print("\t");
 	}
 	
 	public void printAlt(String padding){
-		System.out.println(program.getText());
+		//StrOperator = StrOperator + program.getText();
 		field.print("\t");
 		method.print("\t");
+	}
+	public Node retFiel(){
+		return field;
+	}
+	
+	public Node retMethod(){
+		return method;
 	}
 } 

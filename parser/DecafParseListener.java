@@ -50,11 +50,11 @@ public interface DecafParseListener extends ParseTreeListener {
 	void enterAssignOp1(DecafParse.AssignOp1Context ctx);
 	void exitAssignOp1(DecafParse.AssignOp1Context ctx);
 
-	void enterAssignOp2(DecafParse.AssignOp2Context ctx);
-	void exitAssignOp2(DecafParse.AssignOp2Context ctx);
-
 	void enterOpMinus(DecafParse.OpMinusContext ctx);
 	void exitOpMinus(DecafParse.OpMinusContext ctx);
+
+	void enterAssignOp2(DecafParse.AssignOp2Context ctx);
+	void exitAssignOp2(DecafParse.AssignOp2Context ctx);
 
 	void enterFielddecl1(DecafParse.Fielddecl1Context ctx);
 	void exitFielddecl1(DecafParse.Fielddecl1Context ctx);
@@ -85,6 +85,9 @@ public interface DecafParseListener extends ParseTreeListener {
 
 	void enterBooleannType(DecafParse.BooleannTypeContext ctx);
 	void exitBooleannType(DecafParse.BooleannTypeContext ctx);
+
+	void enterStatement111(DecafParse.Statement111Context ctx);
+	void exitStatement111(DecafParse.Statement111Context ctx);
 
 	void enterOpEqual(DecafParse.OpEqualContext ctx);
 	void exitOpEqual(DecafParse.OpEqualContext ctx);
@@ -121,6 +124,9 @@ public interface DecafParseListener extends ParseTreeListener {
 
 	void enterCalloutArg2(DecafParse.CalloutArg2Context ctx);
 	void exitCalloutArg2(DecafParse.CalloutArg2Context ctx);
+
+	void enterExpresionMetodo(DecafParse.ExpresionMetodoContext ctx);
+	void exitExpresionMetodo(DecafParse.ExpresionMetodoContext ctx);
 
 	void enterMethodCall(DecafParse.MethodCallContext ctx);
 	void exitMethodCall(DecafParse.MethodCallContext ctx);

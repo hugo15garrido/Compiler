@@ -37,9 +37,9 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 
 	@Override public T visitAssignOp1(DecafParse.AssignOp1Context ctx) { return visitChildren(ctx); }
 
-	@Override public T visitAssignOp2(DecafParse.AssignOp2Context ctx) { return visitChildren(ctx); }
-
 	@Override public T visitOpMinus(DecafParse.OpMinusContext ctx) { return visitChildren(ctx); }
+
+	@Override public T visitAssignOp2(DecafParse.AssignOp2Context ctx) { return visitChildren(ctx); }
 
 	@Override public T visitFielddecl1(DecafParse.Fielddecl1Context ctx) { return visitChildren(ctx); }
 
@@ -60,6 +60,8 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 	@Override public T visitForAssignation(DecafParse.ForAssignationContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitBooleannType(DecafParse.BooleannTypeContext ctx) { return visitChildren(ctx); }
+
+	@Override public T visitStatement111(DecafParse.Statement111Context ctx) { return visitChildren(ctx); }
 
 	@Override public T visitOpEqual(DecafParse.OpEqualContext ctx) { return visitChildren(ctx); }
 
@@ -84,6 +86,8 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 	@Override public T visitOpMuldDiv(DecafParse.OpMuldDivContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitCalloutArg2(DecafParse.CalloutArg2Context ctx) { return visitChildren(ctx); }
+
+	@Override public T visitExpresionMetodo(DecafParse.ExpresionMetodoContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitMethodCall(DecafParse.MethodCallContext ctx) { return visitChildren(ctx); }
 

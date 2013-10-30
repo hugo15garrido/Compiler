@@ -36,9 +36,9 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 
 	T visitAssignOp1(DecafParse.AssignOp1Context ctx);
 
-	T visitAssignOp2(DecafParse.AssignOp2Context ctx);
-
 	T visitOpMinus(DecafParse.OpMinusContext ctx);
+
+	T visitAssignOp2(DecafParse.AssignOp2Context ctx);
 
 	T visitFielddecl1(DecafParse.Fielddecl1Context ctx);
 
@@ -59,6 +59,8 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 	T visitForAssignation(DecafParse.ForAssignationContext ctx);
 
 	T visitBooleannType(DecafParse.BooleannTypeContext ctx);
+
+	T visitStatement111(DecafParse.Statement111Context ctx);
 
 	T visitOpEqual(DecafParse.OpEqualContext ctx);
 
@@ -83,6 +85,8 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 	T visitOpMuldDiv(DecafParse.OpMuldDivContext ctx);
 
 	T visitCalloutArg2(DecafParse.CalloutArg2Context ctx);
+
+	T visitExpresionMetodo(DecafParse.ExpresionMetodoContext ctx);
 
 	T visitMethodCall(DecafParse.MethodCallContext ctx);
 
