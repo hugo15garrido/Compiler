@@ -17,9 +17,9 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 
 	@Override public T visitIntType(DecafParse.IntTypeContext ctx) { return visitChildren(ctx); }
 
-	@Override public T visitAsignationColon(DecafParse.AsignationColonContext ctx) { return visitChildren(ctx); }
-
 	@Override public T visitLocationOp(DecafParse.LocationOpContext ctx) { return visitChildren(ctx); }
+
+	@Override public T visitAsignationColon(DecafParse.AsignationColonContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitOpAnd(DecafParse.OpAndContext ctx) { return visitChildren(ctx); }
 
@@ -55,6 +55,8 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 
 	@Override public T visitLiteralInt(DecafParse.LiteralIntContext ctx) { return visitChildren(ctx); }
 
+	@Override public T visitOpDivision(DecafParse.OpDivisionContext ctx) { return visitChildren(ctx); }
+
 	@Override public T visitForAssignation(DecafParse.ForAssignationContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitBooleannType(DecafParse.BooleannTypeContext ctx) { return visitChildren(ctx); }
@@ -67,11 +69,15 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 
 	@Override public T visitMethodDeclVoid(DecafParse.MethodDeclVoidContext ctx) { return visitChildren(ctx); }
 
+	@Override public T visitOperadorel(DecafParse.OperadorelContext ctx) { return visitChildren(ctx); }
+
 	@Override public T visitLocation1(DecafParse.Location1Context ctx) { return visitChildren(ctx); }
 
 	@Override public T visitLiteralString(DecafParse.LiteralStringContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitExpreParen(DecafParse.ExpreParenContext ctx) { return visitChildren(ctx); }
+
+	@Override public T visitOperadoreq(DecafParse.OperadoreqContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitOpShifft1(DecafParse.OpShifft1Context ctx) { return visitChildren(ctx); }
 
@@ -81,7 +87,11 @@ public class DecafParseBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 
 	@Override public T visitMethodCall(DecafParse.MethodCallContext ctx) { return visitChildren(ctx); }
 
+	@Override public T visitOperadorSuma(DecafParse.OperadorSumaContext ctx) { return visitChildren(ctx); }
+
 	@Override public T visitCalloutArg1(DecafParse.CalloutArg1Context ctx) { return visitChildren(ctx); }
+
+	@Override public T visitOperadorShifft(DecafParse.OperadorShifftContext ctx) { return visitChildren(ctx); }
 
 	@Override public T visitMethodName(DecafParse.MethodNameContext ctx) { return visitChildren(ctx); }
 

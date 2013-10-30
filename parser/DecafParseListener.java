@@ -20,11 +20,11 @@ public interface DecafParseListener extends ParseTreeListener {
 	void enterIntType(DecafParse.IntTypeContext ctx);
 	void exitIntType(DecafParse.IntTypeContext ctx);
 
-	void enterAsignationColon(DecafParse.AsignationColonContext ctx);
-	void exitAsignationColon(DecafParse.AsignationColonContext ctx);
-
 	void enterLocationOp(DecafParse.LocationOpContext ctx);
 	void exitLocationOp(DecafParse.LocationOpContext ctx);
+
+	void enterAsignationColon(DecafParse.AsignationColonContext ctx);
+	void exitAsignationColon(DecafParse.AsignationColonContext ctx);
 
 	void enterOpAnd(DecafParse.OpAndContext ctx);
 	void exitOpAnd(DecafParse.OpAndContext ctx);
@@ -77,6 +77,9 @@ public interface DecafParseListener extends ParseTreeListener {
 	void enterLiteralInt(DecafParse.LiteralIntContext ctx);
 	void exitLiteralInt(DecafParse.LiteralIntContext ctx);
 
+	void enterOpDivision(DecafParse.OpDivisionContext ctx);
+	void exitOpDivision(DecafParse.OpDivisionContext ctx);
+
 	void enterForAssignation(DecafParse.ForAssignationContext ctx);
 	void exitForAssignation(DecafParse.ForAssignationContext ctx);
 
@@ -95,6 +98,9 @@ public interface DecafParseListener extends ParseTreeListener {
 	void enterMethodDeclVoid(DecafParse.MethodDeclVoidContext ctx);
 	void exitMethodDeclVoid(DecafParse.MethodDeclVoidContext ctx);
 
+	void enterOperadorel(DecafParse.OperadorelContext ctx);
+	void exitOperadorel(DecafParse.OperadorelContext ctx);
+
 	void enterLocation1(DecafParse.Location1Context ctx);
 	void exitLocation1(DecafParse.Location1Context ctx);
 
@@ -103,6 +109,9 @@ public interface DecafParseListener extends ParseTreeListener {
 
 	void enterExpreParen(DecafParse.ExpreParenContext ctx);
 	void exitExpreParen(DecafParse.ExpreParenContext ctx);
+
+	void enterOperadoreq(DecafParse.OperadoreqContext ctx);
+	void exitOperadoreq(DecafParse.OperadoreqContext ctx);
 
 	void enterOpShifft1(DecafParse.OpShifft1Context ctx);
 	void exitOpShifft1(DecafParse.OpShifft1Context ctx);
@@ -116,8 +125,14 @@ public interface DecafParseListener extends ParseTreeListener {
 	void enterMethodCall(DecafParse.MethodCallContext ctx);
 	void exitMethodCall(DecafParse.MethodCallContext ctx);
 
+	void enterOperadorSuma(DecafParse.OperadorSumaContext ctx);
+	void exitOperadorSuma(DecafParse.OperadorSumaContext ctx);
+
 	void enterCalloutArg1(DecafParse.CalloutArg1Context ctx);
 	void exitCalloutArg1(DecafParse.CalloutArg1Context ctx);
+
+	void enterOperadorShifft(DecafParse.OperadorShifftContext ctx);
+	void exitOperadorShifft(DecafParse.OperadorShifftContext ctx);
 
 	void enterMethodName(DecafParse.MethodNameContext ctx);
 	void exitMethodName(DecafParse.MethodNameContext ctx);

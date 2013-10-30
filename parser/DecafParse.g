@@ -96,15 +96,25 @@ op_or		:op_and(OR op_and)*{ stack1.push("op_or		:op_and(OR op_and)*");}{ stack2.
 
 op_and		:eq_op(AND eq_op )*{ stack1.push("op_and		:eq_op(AND eq_op )*");}{ stack2.push("op_and		:eq_op(AND eq_op )*");} #OpAnd;
 
-eq_op		:op_rel((EQUALS| NOTEQUAL)op_rel)* { stack1.push("eq_op		:op_rel((EQUALS| NOTEQUAL)op_rel)*");}{ stack2.push("eq_op		:op_rel((EQUALS| NOTEQUAL)op_rel)*");} #OpEqual;
+eq_op		:op_rel(operador_eq op_rel)* { stack1.push("eq_op		:op_rel(operador_eq op_rel)*");}{ stack2.push("eq_op		:op_rel(operador_eq op_rel)*");} #OpEqual;
 
-op_rel		:op_shift((LESSTHAN|GREATERTHAN|GREATERTHANOREQUALTO|LESSTHANOREQUALTO)op_shift)*{ stack1.push("op_rel		:op_shift((LESSTHAN|GREATERTHAN|GREATERTHANOREQUALTO|LESSTHANOREQUALTO)op_shift)*");}{ stack2.push("op_rel		:op_shift((LESSTHAN|GREATERTHAN|GREATERTHANOREQUALTO|LESSTHANOREQUALTO)op_shift)*");} #OpShifft;
+operador_eq : (EQUALS| NOTEQUAL) { stack1.push("operador_eq : (EQUALS| NOTEQUAL)");} { stack2.push("operador_eq : (EQUALS| NOTEQUAL)");} #operadoreq;
 
-op_shift	:op_msm ((SLL|SRL)op_msm)* { stack1.push("op_shift	:op_msm ((SLL|SRL)op_msm)*");}{ stack2.push("op_shift	:op_msm ((SLL|SRL)op_msm)*");} #OpShifft1;
+op_rel		:op_shift(operador_rel op_shift)*{ stack1.push("op_rel		:op_shift((LESSTHAN|GREATERTHAN|GREATERTHANOREQUALTO|LESSTHANOREQUALTO)op_shift)*");}{ stack2.push("op_rel		:op_shift((LESSTHAN|GREATERTHAN|GREATERTHANOREQUALTO|LESSTHANOREQUALTO)op_shift)*");} #OpShifft;
 
-op_msm		:op_muldiv ((MINUS|PLUS)op_muldiv)* { stack1.push("op_msm		:op_muldiv ((MINUS|PLUS)op_muldiv)*");}{ stack2.push("op_msm		:op_muldiv ((MINUS|PLUS)op_muldiv)*");} #OpMsm;
+operador_rel : (LESSTHAN|GREATERTHAN|GREATERTHANOREQUALTO|LESSTHANOREQUALTO) { stack1.push("operador_rel : (LESSTHAN|GREATERTHAN|GREATERTHANOREQUALTO|LESSTHANOREQUALTO)");} { stack2.push("operador_rel : (LESSTHAN|GREATERTHAN|GREATERTHANOREQUALTO|LESSTHANOREQUALTO)");} #operadorel;
 
-op_muldiv	:not((MULTIPLICATION|DIVISION|MOD) not)* { stack1.push("op_muldiv	:not((MULTIPLICATION|DIVISION|MOD) not)*");}{ stack2.push("op_muldiv	:not((MULTIPLICATION|DIVISION|MOD) not)*");} #OpMuldDiv;
+op_shift	:op_msm (operador_shifft op_msm)* { stack1.push("op_shift	:op_msm ((SLL|SRL)op_msm)*");}{ stack2.push("op_shift	:op_msm ((SLL|SRL)op_msm)*");} #OpShifft1;
+
+operador_shifft: (SLL|SRL) { stack1.push("operador_shifft: (SLL|SRL)");} { stack2.push("operador_shifft: (SLL|SRL)");} #operadorShifft;
+
+op_msm		:op_muldiv (operador_suma op_muldiv)* { stack1.push("op_msm		:op_muldiv ((MINUS|PLUS)op_muldiv)*");}{ stack2.push("op_msm		:op_muldiv ((MINUS|PLUS)op_muldiv)*");} #OpMsm;
+
+operador_suma: (MINUS|PLUS) { stack1.push("operador_suma: (MINUS|PLUS)");} { stack2.push("operador_suma: (MINUS|PLUS)");} #operadorSuma;
+
+op_muldiv	:not(operador_division not)* { stack1.push("op_muldiv	:not((MULTIPLICATION|DIVISION|MOD) not)*");}{ stack2.push("op_muldiv	:not((MULTIPLICATION|DIVISION|MOD) not)*");} #OpMuldDiv;
+
+operador_division: (MULTIPLICATION|DIVISION|MOD) { stack1.push("operador_division: (MULTIPLICATION|DIVISION|MOD)");} { stack2.push("operador_division: (MULTIPLICATION|DIVISION|MOD)");}   #OpDivision;
 
 not		: (NOT)? minus { stack1.push("not		: (NOT)? minus");}{ stack2.push("not		: (NOT)? minus");} #OpNot;
 

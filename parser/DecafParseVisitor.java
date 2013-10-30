@@ -16,9 +16,9 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 
 	T visitIntType(DecafParse.IntTypeContext ctx);
 
-	T visitAsignationColon(DecafParse.AsignationColonContext ctx);
-
 	T visitLocationOp(DecafParse.LocationOpContext ctx);
+
+	T visitAsignationColon(DecafParse.AsignationColonContext ctx);
 
 	T visitOpAnd(DecafParse.OpAndContext ctx);
 
@@ -54,6 +54,8 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 
 	T visitLiteralInt(DecafParse.LiteralIntContext ctx);
 
+	T visitOpDivision(DecafParse.OpDivisionContext ctx);
+
 	T visitForAssignation(DecafParse.ForAssignationContext ctx);
 
 	T visitBooleannType(DecafParse.BooleannTypeContext ctx);
@@ -66,11 +68,15 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 
 	T visitMethodDeclVoid(DecafParse.MethodDeclVoidContext ctx);
 
+	T visitOperadorel(DecafParse.OperadorelContext ctx);
+
 	T visitLocation1(DecafParse.Location1Context ctx);
 
 	T visitLiteralString(DecafParse.LiteralStringContext ctx);
 
 	T visitExpreParen(DecafParse.ExpreParenContext ctx);
+
+	T visitOperadoreq(DecafParse.OperadoreqContext ctx);
 
 	T visitOpShifft1(DecafParse.OpShifft1Context ctx);
 
@@ -80,7 +86,11 @@ public interface DecafParseVisitor<T> extends ParseTreeVisitor<T> {
 
 	T visitMethodCall(DecafParse.MethodCallContext ctx);
 
+	T visitOperadorSuma(DecafParse.OperadorSumaContext ctx);
+
 	T visitCalloutArg1(DecafParse.CalloutArg1Context ctx);
+
+	T visitOperadorShifft(DecafParse.OperadorShifftContext ctx);
 
 	T visitMethodName(DecafParse.MethodNameContext ctx);
 

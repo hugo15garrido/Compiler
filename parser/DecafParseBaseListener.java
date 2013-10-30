@@ -23,11 +23,11 @@ public class DecafParseBaseListener implements DecafParseListener {
 	@Override public void enterIntType(DecafParse.IntTypeContext ctx) { }
 	@Override public void exitIntType(DecafParse.IntTypeContext ctx) { }
 
-	@Override public void enterAsignationColon(DecafParse.AsignationColonContext ctx) { }
-	@Override public void exitAsignationColon(DecafParse.AsignationColonContext ctx) { }
-
 	@Override public void enterLocationOp(DecafParse.LocationOpContext ctx) { }
 	@Override public void exitLocationOp(DecafParse.LocationOpContext ctx) { }
+
+	@Override public void enterAsignationColon(DecafParse.AsignationColonContext ctx) { }
+	@Override public void exitAsignationColon(DecafParse.AsignationColonContext ctx) { }
 
 	@Override public void enterOpAnd(DecafParse.OpAndContext ctx) { }
 	@Override public void exitOpAnd(DecafParse.OpAndContext ctx) { }
@@ -80,6 +80,9 @@ public class DecafParseBaseListener implements DecafParseListener {
 	@Override public void enterLiteralInt(DecafParse.LiteralIntContext ctx) { }
 	@Override public void exitLiteralInt(DecafParse.LiteralIntContext ctx) { }
 
+	@Override public void enterOpDivision(DecafParse.OpDivisionContext ctx) { }
+	@Override public void exitOpDivision(DecafParse.OpDivisionContext ctx) { }
+
 	@Override public void enterForAssignation(DecafParse.ForAssignationContext ctx) { }
 	@Override public void exitForAssignation(DecafParse.ForAssignationContext ctx) { }
 
@@ -98,6 +101,9 @@ public class DecafParseBaseListener implements DecafParseListener {
 	@Override public void enterMethodDeclVoid(DecafParse.MethodDeclVoidContext ctx) { }
 	@Override public void exitMethodDeclVoid(DecafParse.MethodDeclVoidContext ctx) { }
 
+	@Override public void enterOperadorel(DecafParse.OperadorelContext ctx) { }
+	@Override public void exitOperadorel(DecafParse.OperadorelContext ctx) { }
+
 	@Override public void enterLocation1(DecafParse.Location1Context ctx) { }
 	@Override public void exitLocation1(DecafParse.Location1Context ctx) { }
 
@@ -106,6 +112,9 @@ public class DecafParseBaseListener implements DecafParseListener {
 
 	@Override public void enterExpreParen(DecafParse.ExpreParenContext ctx) { }
 	@Override public void exitExpreParen(DecafParse.ExpreParenContext ctx) { }
+
+	@Override public void enterOperadoreq(DecafParse.OperadoreqContext ctx) { }
+	@Override public void exitOperadoreq(DecafParse.OperadoreqContext ctx) { }
 
 	@Override public void enterOpShifft1(DecafParse.OpShifft1Context ctx) { }
 	@Override public void exitOpShifft1(DecafParse.OpShifft1Context ctx) { }
@@ -119,8 +128,14 @@ public class DecafParseBaseListener implements DecafParseListener {
 	@Override public void enterMethodCall(DecafParse.MethodCallContext ctx) { }
 	@Override public void exitMethodCall(DecafParse.MethodCallContext ctx) { }
 
+	@Override public void enterOperadorSuma(DecafParse.OperadorSumaContext ctx) { }
+	@Override public void exitOperadorSuma(DecafParse.OperadorSumaContext ctx) { }
+
 	@Override public void enterCalloutArg1(DecafParse.CalloutArg1Context ctx) { }
 	@Override public void exitCalloutArg1(DecafParse.CalloutArg1Context ctx) { }
+
+	@Override public void enterOperadorShifft(DecafParse.OperadorShifftContext ctx) { }
+	@Override public void exitOperadorShifft(DecafParse.OperadorShifftContext ctx) { }
 
 	@Override public void enterMethodName(DecafParse.MethodNameContext ctx) { }
 	@Override public void exitMethodName(DecafParse.MethodNameContext ctx) { }

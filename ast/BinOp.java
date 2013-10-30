@@ -16,4 +16,10 @@ public class BinOp extends Node{
 		left.print(padding + "\t");
 		right.print(padding + "\t");
 	}
+	
+	public void printAlt(String padding){
+		System.out.println(padding + operator);
+		left.print(padding + "\t");
+		right.print(padding + "\t");
+	}
 } 
